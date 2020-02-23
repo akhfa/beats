@@ -38,3 +38,5 @@ data:
       hosts: ['${ELASTICSEARCH_HOST:elasticsearch}:${ELASTICSEARCH_PORT:9200}']
       username: ${ELASTICSEARCH_USERNAME}
       password: ${ELASTICSEARCH_PASSWORD}
+      index: "%{[fields.log_type]}-%{[agent.version]}-%{+yyyy.MM.dd}"
+      protocol: https
